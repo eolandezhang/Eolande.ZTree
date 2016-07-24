@@ -23,54 +23,11 @@ namespace Eolande.ZTree.Web.Controllers
 
                 var list = session.QueryOver<ZTreeDomain>()
  .List();
-                //var json = JsonConvert.SerializeObject(list);
-                StringBuilder psb = new StringBuilder();
-                string cate;
-                foreach (var m in list)
-                {
-                    psb.Append("{");
-                    psb.Append("id");
-                    psb.Append(":");
-                    psb.Append(m.id);
-                    psb.Append(",pId:");
-                    psb.Append(m.pId);
-                    psb.Append(",name:\"");
-                    psb.Append(String.IsNullOrEmpty(m.name) ? "" : m.name);
-
-                    //psb.Append("\",title:\"");
-                    //psb.Append(String.IsNullOrEmpty(m.TITLE) ? "" : m.TITLE);
-                    //psb.Append("\",url");
-                    //psb.Append(":\"");
-                    //psb.Append(String.IsNullOrEmpty(m.URL) ? "" : m.URL + "?mid=" + m.ID);
-                    psb.Append("\",open");
-                    psb.Append(":\"");
-                    psb.Append("true");
-
-                    //psb.Append(String.IsNullOrEmpty(m.OPEN) ? "" : m.OPEN);
-                    //psb.Append("\",target");
-                    //psb.Append(":\"");
-                    //psb.Append(String.IsNullOrEmpty(m.TARGET) ? "_self" : m.TARGET);
-                    //psb.Append("\",icon");
-                    //psb.Append(":\"");
-                    //psb.Append(String.IsNullOrEmpty(m.ICON) ? "" : m.ICON);
-
-                    //psb.Append("\",sort");
-                    //psb.Append(":\"");
-                    //psb.Append(m.SORT);
-
-                    //psb.Append("\",pname");
-                    //psb.Append(":\"");
-                    //psb.Append(m.PNAME);
-
-                    psb.Append("\"},");
-                }
-
-
-                cate = "[";
-
-                cate += psb.ToString().TrimEnd(',');
-                cate += "]";
-                return cate;
+                int i = 0;
+                list.ToList().ForEach(x => { x.Info = i.ToString();i++; });
+                var json = JsonConvert.SerializeObject(list);
+               
+                return json;
             }
 
         }

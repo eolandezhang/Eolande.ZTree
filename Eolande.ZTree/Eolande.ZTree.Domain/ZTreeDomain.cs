@@ -9,9 +9,9 @@ namespace Eolande.ZTree.Domain
     [Serializable]
     public partial class ZTreeDomain
     {
-        public virtual int Id { get; set; }
-        public virtual int PId { get; set; }
-        public virtual string Name { get; set; }
+        public virtual int id { get; set; }
+        public virtual int pId { get; set; }
+        public virtual string name { get; set; }
         
     }
 }

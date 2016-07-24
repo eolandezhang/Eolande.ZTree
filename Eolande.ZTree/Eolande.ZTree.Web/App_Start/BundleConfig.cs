@@ -10,6 +10,10 @@ namespace Eolande.ZTree.Web
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
+            bundles.Add(new ScriptBundle("~/bundles/ztree").Include(
+                        "~/Scripts/jquery.ztree.all-3.5.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/ztreeapp").Include(
+                        "~/Scripts/App/ZTree.js"));
 
             // 使用要用于开发和学习的 Modernizr 的开发版本。然后，当你做好
             // 生产准备时，请使用 http://modernizr.com 上的生成工具来仅选择所需的测试。
@@ -22,7 +26,9 @@ namespace Eolande.ZTree.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/zTree.min.css"));
+            
         }
     }
 }

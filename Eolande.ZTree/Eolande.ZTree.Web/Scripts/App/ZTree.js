@@ -5,7 +5,7 @@
         url: 'api/ZTree/Get',
         contentType: "application/json; charset=utf-8",
         success: function (data) {
-            console.log(eval(data));
+            console.log(data);
             $.fn.zTree.init($("#tree"), {
                 view: {
                     showIcon: true,
@@ -14,10 +14,19 @@
                 },
                 data: {
                     simpleData: {
-                        enable: true
+                        enable: true,
+                        idKey: "id",
+                        pIdKey: "pId",
+                        rootPId:-1
                     },
                     key: {
-                        title: "name"
+                        title: "Info"
+                    }
+                },
+               
+                callback: {
+                    onClick: function (event,treeId,treeNode,clickFlag) {
+                        console.log(treeNode)
                     }
                 }
             }, eval(data));

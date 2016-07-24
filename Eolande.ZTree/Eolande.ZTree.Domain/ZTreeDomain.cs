@@ -12,6 +12,7 @@ namespace Eolande.ZTree.Domain
         public virtual int id { get; set; }
         public virtual int pId { get; set; }
         public virtual string name { get; set; }
-        
+        public virtual bool open { get; set; }
+        public virtual string Info { get; set; }
     }
 }

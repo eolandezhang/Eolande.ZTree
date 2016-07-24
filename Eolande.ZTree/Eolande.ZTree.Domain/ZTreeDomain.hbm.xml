@@ -5,6 +5,7 @@
     <id name="id" column="[Id]"></id>
     <property name="pId" column="[PId]"/>
     <property name="name" column="[Name]"/>
+    <property name="open" column="[Open]"/>
   </class>
 
 </hibernate-mapping>

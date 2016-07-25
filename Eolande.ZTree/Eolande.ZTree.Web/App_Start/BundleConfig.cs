@@ -9,11 +9,13 @@ namespace Eolande.ZTree.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/ext-4.2.1.883/ext-all.js"));
+
+            //bundles.Add(new ScriptBundle("~/bundles/ztree").Include(
+            //            "~/Scripts/jquery.ztree.all-3.5.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/ztree").Include(
-                        "~/Scripts/jquery.ztree.all-3.5.min.js"));
-            bundles.Add(new ScriptBundle("~/bundles/ztreeapp").Include(
-                        "~/Scripts/App/ZTree.js"));
+                       "~/Scripts/App/ZTree.js"));
 
             // 使用要用于开发和学习的 Modernizr 的开发版本。然后，当你做好
             // 生产准备时，请使用 http://modernizr.com 上的生成工具来仅选择所需的测试。
@@ -24,11 +26,15 @@ namespace Eolande.ZTree.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            //bundles.Add(new StyleBundle("~/Content/css").Include(
+            //          "~/Content/bootstrap.css",
+            //          "~/Content/site.css",
+            //          "~/Content/zTree.min.css"));
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/zTree.min.css"));
-            
+                      //"~/Content/bootstrap.css",
+                      //"~/Content/site.css",
+                      "~/Scripts/ext-4.2.1.883/resources/css/ext-all.css"));
+
         }
     }
 }

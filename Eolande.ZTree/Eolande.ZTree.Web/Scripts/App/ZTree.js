@@ -18,8 +18,17 @@
         minSize: 150,
         rootVisible: false,
         autoScroll: true,
-        store: store
+        store: store,
+        listeners: {
+            itemclick: function (thisTree, record, item, index, e, options) {
+                console.log(item);
+                if (record.get('leaf')) {
+                    Ext.MessageBox.alert('YES', record.get('text'));
+                }
+            }
+        }
     });
+    
    
     var contentPanel = {
         id: 'content-panel',

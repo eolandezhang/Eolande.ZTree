@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eolande.ZTree.Domain
 {
@@ -25,7 +22,5 @@ namespace Eolande.ZTree.Domain
         public virtual bool leaf { get; set; }
         [DataMember]
         public virtual List<TreeModel> children { get; set; }
-
-        
     }
 }
